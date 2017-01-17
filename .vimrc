@@ -40,8 +40,8 @@ set number
 "set list lcs=tab:\|· 
 
 "Syntastic
-let g:syntastic_php_checkers=['php', 'phpcs']
-let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
+let g:syntastic_php_checkers=['php', 'phpmd', 'phpcs']
+let g:syntastic_php_phpcs_args='--standard=PSR2 -n --exclude=PEAR.Commenting.FunctionComment'
 let g:syntastic_php_phpcs_args='--tab-width=0'
 
 set tabstop=4
@@ -49,3 +49,4 @@ set tabstop=4
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+
