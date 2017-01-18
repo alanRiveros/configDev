@@ -90,4 +90,5 @@ noremap <C-S-Up> :resize +5<CR>
 noremap <C-S-Down> :resize -5<CR>
 xnoremap <A-S-Up> :m-2<CR>gv=gv
 xnoremap <A-S-Down> :m'>+<CR>gv=gv
-
+nnoremap <A-S-Up> :m-2<CR>
+nnoremap <A-S-Down> :m+1<CR>
