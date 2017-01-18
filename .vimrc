@@ -43,10 +43,19 @@ set number
 let g:syntastic_php_checkers=['php', 'phpmd', 'phpcs']
 let g:syntastic_php_phpcs_args='--standard=PSR2 -n --exclude=PEAR.Commenting.FunctionComment'
 let g:syntastic_php_phpcs_args='--tab-width=0'
-
+let g:syntastic_php_phpmd_post_args='cleancode,codesize,controversial,design,naming,unusedcode'
 set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+syntax enable
+colorscheme darcula
 
+
+
+"keymaps
+"
+"conserva la ultima seleccion al indentar
+vnoremap < <gv
+vnoremap > >gv
