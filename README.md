@@ -22,7 +22,7 @@ para usar los tags hay que compilar ctags primero http://ctags.sourceforge.net/
 ./configure
 make
 make install
-
+parchear a la version 5.8.1
 
 supertab
 

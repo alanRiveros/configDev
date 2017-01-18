@@ -92,3 +92,5 @@ xnoremap <A-S-Up> :m-2<CR>gv=gv
 xnoremap <A-S-Down> :m'>+<CR>gv=gv
 nnoremap <A-S-Up> :m-2<CR>
 nnoremap <A-S-Down> :m+1<CR>
+nnoremap <C-n> :bn<CR>
+nnoremap <C-q> :bd<CR>
