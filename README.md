@@ -17,8 +17,13 @@ actualizar cache de fuentes fc-cache -vf
 
 
 plugins a instalar
-snipMate
 tagbar
+para usar los tags hay que compilar ctags primero http://ctags.sourceforge.net/
+./configure
+make
+make install
+
+
 supertab
 
 hacer atajos de teclado para las funciones comunes como mover linea hacia arriba, abajo
@@ -32,3 +37,4 @@ instalar inspect para python
 ver como conseguir el efecto ctrl+click en una declaracion (creo que uno de los plugin de arriba hace eso)
 instalar autocomplete css y stylus
 instalar inspect para css y stylus
+aprender a generar snippets
