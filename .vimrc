@@ -24,9 +24,9 @@ Plugin 'sniphpets/sniphpets-common'
 Plugin 'sniphpets/sniphpets-phpunit'
 Plugin 'sniphpets/sniphpets-symfony'
 Plugin 'sniphpets/sniphpets-doctrine'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
-Plugin 'majutsushi/tagbar'
+"Plugin 'xolox/vim-misc'
+"Plugin 'xolox/vim-easytags'
+"Plugin 'majutsushi/tagbar'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -93,4 +93,5 @@ xnoremap <A-S-Down> :m'>+<CR>gv=gv
 nnoremap <A-S-Up> :m-2<CR>
 nnoremap <A-S-Down> :m+1<CR>
 nnoremap <C-n> :bn<CR>
-nnoremap <C-q> :bd<CR>
+nnoremap <C-b> :bp<CR>
+nnoremap <C-c> :bd<CR>
