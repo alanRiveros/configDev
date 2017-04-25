@@ -29,4 +29,6 @@ buscar una alternativa para emmet html5
 instalar in inspect para javascript
 instalar inspect para python
 instalar inspect para css y stylus
-aprender a generar snippets
+
+usar el theme desde /usr/share/awesome/themes  --hacer un link dimbolico
+
