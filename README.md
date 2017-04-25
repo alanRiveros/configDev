@@ -32,3 +32,6 @@ instalar inspect para css y stylus
 
 usar el theme desde /usr/share/awesome/themes  --hacer un link dimbolico
 
+para incluir un archivo dentro de rc.lua se puede usar
+dofile(awful.util.getdir("config") .. "/" .. "somefile.lua")
+
