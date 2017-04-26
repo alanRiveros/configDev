@@ -12,6 +12,8 @@ require("debian.menu")
 
 vicious = require("vicious")
 
+dofile(awful.util.getdir("config") .. "/" .. "/widgets/batery.lua")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -188,6 +190,18 @@ for s = 1, screen.count() do
     }
 end
 -- }}}
+
+
+-- wibox inferior
+     mywibox[s] = awful.wibox({ position = "bottom", screen = s, height=19, opacity = 0.79})
+      mywibox[s].widgets = {
+        {
+            baticon, space, battpct, space, battbar, separator,
+            layout = awful.widget.layout.horizontal.leftright
+        },
+        layout = awful.widget.layout.horizontal.rightleft
+     }
+
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
