@@ -12,7 +12,7 @@ require("debian.menu")
 
 vicious = require("vicious")
 
-dofile(awful.util.getdir("config") .. "/" .. "/widgets/batery.lua")
+
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -41,7 +41,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init("/usr/share/awesome/themes/dot/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
@@ -100,6 +100,22 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
 mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
                                      menu = mymainmenu })
 -- }}}
+
+
+dofile("/code/configDev/widgets/batery.lua")
+dofile("/code/configDev/widgets/fileSystem.lua")
+dofile("/code/configDev/widgets/ram.lua")
+dofile("/code/configDev/widgets/volumen.lua")
+dofile("/code/configDev/widgets/keyboardChange.lua")
+dofile("/code/configDev/widgets/separator.lua")
+dofile("/code/configDev/widgets/cpuMonitor.lua")
+dofile("/code/configDev/widgets/networkMonitor.lua")
+dofile("/code/configDev/widgets/system.lua")
+
+
+
+
+
 
 -- {{{ Wibox
 -- Create a textclock widget
@@ -188,19 +204,42 @@ for s = 1, screen.count() do
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
-end
--- }}}
+
+   -- Create the wibox
+  mywibox[s] = awful.wibox({ position = "bottom", screen = s, height=19, opacity = 0.79})
+  -- Add widgets to the wibox - order matters
+  mywibox[s].widgets = {
+      {
+        space, sysicon, space, sys, separator,
+        neticonup, espace, netwidgetup, space,
+        neticondown, espace, netwidgetdown, separator,
+        baticon, space, battpct, space, battbar, separator,
+        fshomeicon, space, fshbar, space, fsh, separator,
+        fsrooticon, space, fsrbar, space, fsr, separator,
+        volicon, space, volwidget, separator,
+        cpuicon, space, cpu1, separator, cpuicon, space, cpu2, separator,
+        layout = awful.widget.layout.horizontal.leftright
+      },
+      layout = awful.widget.layout.horizontal.rightleft
+  }
+
+
 
 
 -- wibox inferior
-     mywibox[s] = awful.wibox({ position = "bottom", screen = s, height=19, opacity = 0.79})
-      mywibox[s].widgets = {
-        {
-            baticon, space, battpct, space, battbar, separator,
-            layout = awful.widget.layout.horizontal.leftright
-        },
-        layout = awful.widget.layout.horizontal.rightleft
-     }
+--     mywibox[s] = awful.wibox({ position = "bottom", screen = s, height=19, opacity = 0.79})
+--      mywibox[s].widgets = {
+--        {
+--            baticon, space, battpct, space, battbar, separator,
+--            layout = awful.widget.layout.horizontal.leftright
+--        },
+--        layout = awful.widget.layout.horizontal.rightleft
+--     }
+
+
+end
+-- }}}
+
 
 
 -- {{{ Mouse bindings
